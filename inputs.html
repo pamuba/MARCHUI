@@ -5,6 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        label span::after{
+            padding:15px;
+        }
+        label input:invalid+span::after{
+            content: "❌";
+        }
+        label input:valid+span::after{
+            content: "\2713";
+        }
+    </style>
 </head>
 <body>
     <form>
@@ -12,7 +26,23 @@
         <input id="first" type="text" value="SAM" required readonly placeholder="ALL IN CAPS">
         <br>
         <label for="email">EMAIL</label>
-        <input id="email" type="email" required pattern="\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,2}\b"  placeholder="email">
+        <input id="email" value="a@a.aa" type="email" required pattern="\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,2}\b"  placeholder="email">
+        <br>
+        <label for="phone">PHONE</label>
+        <input id="phone" type="tel" required value="123-456-7890"
+        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"  
+        placeholder="123-456-7890">
+        <br>
+        <input type="time" min="09:00" max="18:00" required>
+        <small>Office hours are form 9am to 6pm</small>
+        <br>
+        <label>Choose ur preferred date(required, April 12th to 20th):
+            <input type="date"
+            min="2021-04-12"
+            max="2021-04-20"
+            />
+            <span></span>
+        </label>
         <hr> 
         <input type="submit"></button>
     </form>

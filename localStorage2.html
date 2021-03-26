@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        try{
+            var result = "";
+            var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            var charsLength = characters.length;
+            for (let i = 0; i < 1000000; i++) {
+                result += characters.charAt(Math.floor(Math.random() * charsLength));
+                localStorage.setItem("key"+i, result);                
+            }
+        }
+        catch(e){
+            console.log('Exception'+e);
+        }
+    </script>
+</body>
+</html>

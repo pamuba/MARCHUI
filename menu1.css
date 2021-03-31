@@ -18,7 +18,7 @@
     background: #1565c0;
 }
 /* ARIA */
-@media screen and (max-width:800px){
+@media print and (max-width:800px){
     .navigation{
         justify-content: space-around;
     }

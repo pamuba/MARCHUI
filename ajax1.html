@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let url = "https://images.wallpaperscraft.com/image/spiral_circles_immersion_134042_1920x1200.jpg";
+        //CORS
+        let url = "http://127.0.01:5500/images/small.jpg"
+        const loadImage = (url) => {
+            return new Promise(function(resolve, reject){
+                //Open a new XHR
+                var request = new XMLHttpRequest();
+                request.open('GET', url, true);
+                request.responseType = "arraybuffer";
+
+                //When the result loads, check whether it was successful
+                request.onload = function(){
+                    if(request.status === 200){
+                        //If successful, resolve the promise
+                        resolve(request.response);
+                    }else{
+                        //Reject the promise
+                        reject(Error('An error occured while loading'+
+                         'the image, ERROR CODE:'+request.statusText))
+                    }
+                };
+
+                request.send();
+            });
+        };
+
+        const embedImage = url => {
+            loadImage(url).then(function(result){
+                const img = new Image();
+                var binaryData = [];
+                binaryData.push(result);
+
+                var imageURL = window.URL.createObjectURL(new Blob(binaryData, {type:"Image/*"}));
+                img.src = imageURL;
+                document.querySelector('body').appendChild(img);
+            },
+            function(err){
+                console.log(err)
+            });
+        }
+        embedImage(url);
+    </script>
+</body>
+</html>

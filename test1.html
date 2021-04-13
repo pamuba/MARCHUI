@@ -1,0 +1,51 @@
+<!-- <!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <span style="background-color: #fff000">Your text here</span>
+    <br />
+    <span style="background-image: url(https://picsum.photos/id/237/200/300);">Background</span>
+    <hr />
+    Choose a color for the text below<input type="color" id="color_picker" onchange="showHex()"></input>
+    <span id="color_hex_value"></span>
+    <h1>Color Me!!</h1>
+
+    <script>
+        function showHex() {
+            var hex = document.querySelector("#color_hex_value")
+            var h1 = document.querySelector("h1");
+            h1.style.color = document.querySelector("#color_picker").value;
+            document.querySelector("#color_picker").close()
+        }
+    </script>
+
+</body>
+</html>  -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="checkbox" id="chk" onclick="enable(this)">
+    <input type="text" id="txt" disabled />
+    <script>
+        function enable(ref){
+             var txt = document.getElementById("txt");
+             txt.disabled = ref.checked ? false : true;
+             if(!txt.disabled){
+                 txt.focus();
+             }
+        }
+    </script>
+</body>
+</html>

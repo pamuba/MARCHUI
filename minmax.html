@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .items{
+            color:fff;
+            font-size:20px;
+            font-weight: bold;
+        }
+        .container{
+            background-color: #eee;
+            width:600px;
+            display: grid;
+            /* grid-template-columns: 1fr max-content 1fr; */
+            grid-template-columns: 1fr minmax(100px, auto) 1fr;
+            grid-template-rows:repeat(2, 150px);
+            /* grid-template-rows:  repeat(2, minmax(150px,180px)); */
+            /* grid-template-rows:  repeat(2, minmax(150px,min-content)); */
+        }
+        .item1{
+            background-color: lightcoral;
+        }
+        .item2{
+            background-color: orangered;
+            overflow-y: scroll;
+        }
+        .item3{
+            background-color: hotpink;
+        }
+        .item4{
+            background-color: chocolate;
+        }
+        .item5{
+            background-color: tomato;
+        }
+        .item6{
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="items item1">First</div>
+        <div class="items item2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic saepe tempore aut et, dignissimos maxime numquam atque tenetur ullam alias laborum. Saepe, repellendus quidem excepturi aspernatur hic nemo amet quae tempore voluptatum explicabo, iusto suscipit distinctio? Veniam itaque aut, incidunt consequuntur facilis, corrupti, voluptas deserunt exercitationem magni iusto nisi! Deleniti explicabo dolore doloribus ab expedita accusamus corporis, natus nihil est omnis voluptatum dolores? Accusantium, expedita. Rerum atque, quidem fuga enim voluptates vero, unde numquam laboriosam id perferendis eaque ipsam error. Dolore, voluptas numquam! Quasi optio voluptatum, a maiores neque tenetur tempora rem impedit recusandae exercitationem officia eaque, amet distinctio voluptas.Hiii Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore impedit sapiente eos nostrum nulla neque, expedita laudantium itaque assumenda harum.</div>
+        <div class="items item3">Third</div>
+        <div class="items item4">Fourth</div>
+        <div class="items item5">Fifth</div>
+        <div class="items item6">Sixth</div>
+    </div>
+</body>

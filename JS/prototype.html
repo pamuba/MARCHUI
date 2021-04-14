@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // prototype
+        function Student(){
+            this.name = "John";
+            this.gender = "Male"
+        }
+        Student.prototype.age = 15;
+
+        // __proto__
+        var st1 = new Student();
+        // st1.age = 33;
+        console.log(st1.age);
+
+        var st2 = new Student();
+        console.log(st2.age);
+
+        console.log(Student.prototype)
+        console.log(st1.__proto__)
+
+// is there another name available to remplace this.
+// student. right?
+    </script>
+</body>
+</html>

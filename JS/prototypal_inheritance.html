@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let dragon = {
+            name:'Tanya',
+            fire:true,
+            fight(){
+                return 9
+            },
+            sing(){
+                if(this.fire)
+                    return `I am ${this.name}, the breather of fire`
+            }
+        }
+        let lizard = {
+            // fire:true,
+            name:"Kiki",
+            fight(){
+                return 5
+            }
+        }
+
+        //We are going to borrow the sing method for th lizard using bind
+        // const singLizard = dragon.sing.bind(lizard);
+        //bind redirects the this keyword
+        // console.log(singLizard())
+
+        //Prototypal Inheritance
+        // We eant to tell the lizard should inherit all
+        //properties and methods from the dragon
+        lizard.__proto__ = dragon
+        console.log(lizard.sing())
+        //what about properties
+        console.log(lizard.fire)
+        //what about methods
+        console.log(lizard.fight())
+
+        //
+        console.log(dragon.isPrototypeOf(lizard))
+        console.log(lizard.isPrototypeOf(dragon))
+
+    </script>
+</body>
+</html>

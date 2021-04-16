@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="txt" style="font-size: 30px;font-family: Arial, Helvetica, sans-serif;"></div>
+    <script>
+    //     // var a
+    //    function fn(){
+    //         a = setInterval(
+    //             ()=>console.log("Stop Me"), 1000
+    //          )
+    //    }
+    //    function fn1(){
+    //     clearInterval(a)
+    //    }
+    function startTime(){
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+
+        h = checkTIme(h)
+        m = checkTIme(m)
+        s = checkTIme(s)
+
+        document.getElementById("txt").innerHTML = h+":"+m+":"+s;
+
+        t = setTimeout(
+            ()=>startTime(), 1000
+        )
+    }
+    function checkTIme(i){
+        if(i<10){
+            i = "0"+i
+        }
+        return i;
+    }
+    function fn1(){
+        clearTimeout(t)
+    }
+    </script>
+    <button onclick="startTime()">START</button>
+    <button onclick="fn1()">END</button>
+</body>
+</html>

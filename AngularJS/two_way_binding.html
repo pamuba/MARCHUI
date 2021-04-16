@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script>
+     <script src="main_towaybinding.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div ng-controller="myController">
+      <input type="text" ng-model=employee.firstName /><br>
+      <input type="text" ng-model=employee.lastName /><hr>
+
+      {{employee.firstName}}<br>
+      {{employee.lastName}}
+    </div> -->
+
+    <div ng-controller="myController">
+        <table border="1" style="border-collapse:collapse">
+            <thead>
+                <tr>
+                    <th>FirstName</th>
+                    <th>LastName</th>
+                    <th>Department</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="emp in employees">
+                    <td>{{emp.firstName}}</td>
+                    <td>{{emp.lastName}}</td>
+                    <td>{{emp.dept}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script>
+     <script src="events.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div ng-controller="myController">
+        <!-- <table border="1" style="border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Likes</th>
+                    <th>Dislikes</th>
+                    <th>Likes/Dislikes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="te in tech">
+                    <td>{{ te.name}}</td>
+                    <td>{{ te.likes}}</td>
+                    <td>{{ te.dislikes}}</td>
+                    <td>
+                        <input type="button" 
+                        value="Like" ng-click="incrementLikes(te)" />
+                        <input type="button" 
+                        value="DisLike" ng-click="decrementLikes(te)" />
+                    </td>
+                </tr>
+            </tbody>
+        </table> -->
+
+        Rows to display : <input type="number" step="1" max="5" min="0"  ng-model="rowCount" />
+        <table border="1" style="border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Date of Birth</th>
+                    <th>Gender</th>
+                    <th>Salary (number filter)</th>
+                    <th>Salary (currency filter)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees | limitTo:rowCount">
+                    <td> {{ employee.name | uppercase }} </td>
+                    <td> {{ employee.dateOfBirth | date:"dd/MM/yyyy" }} </td>
+                    <td> {{ employee.gender }} </td>
+                    <td> {{ employee.salary | number:2 }} </td>
+                    <td> {{ employee.salary | currency : "$" : 1 }} </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+</html>

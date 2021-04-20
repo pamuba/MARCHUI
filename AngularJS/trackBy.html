@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script>
+    <script src="trackBy.js"></script>
+    <title>Document</title>
+</head>
+<body ng-controller="myController">
+    <table>
+        <thead>
+            <tr>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Annual Salary</th>
+                <th>Date of Birth</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat='employee in employees track by employee.code'>
+                <td>{{employee.code}}</td>
+                <td>{{employee.name}}</td>
+                <td>{{employee.gender}}</td>
+                <td>{{employee.annualSalary}}</td>
+                <td>{{employee.dateOfBirth}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <button ng-click='getEmployees()'>Refresh Employees</button>
+</body>
+</html>

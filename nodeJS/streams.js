@@ -27,8 +27,38 @@ var fs = require('fs')
 var server = http.createServer(function(req, res){
     console.log('equest was made form:'+req.url);
     res.writeHead(200, {'Content-Type':"text/plain"});
-    var myReadStream = fs.createReadStream(__dirname+'/data.txt')
-    myReadStream.pipe(res);
+    var myReadStream = fs.createReadStream(__dirname+'/data1.txt')
+    
+    // myReadStream.pipe(res);
+   
+    //OR
+    
+    result = ''
+    myReadStream.on('data', function(chunk){
+        console.log(chunk)
+        res.end(chunk);
+    })
 })
 server.listen(3000)
 console.log("Running @3000")
+///////////////////////////////////////////////////////////
+
+//  http.createServer(function(req, res){
+//      if(req.url == "/")
+//          fs.createReadStream(__dirname+"/index.html").pipe(res);
+//      else if(req.url == "/api"){
+//         res.writeHead(200, {'Content-Type':"text/json"});
+
+//         var obj = {
+//             firstName:"John",
+//             lastName:"Wick"
+//         }
+//         res.end(JSON.stringify(obj))
+//      }
+//      else{
+//          res.writeHead(404);
+//          res.end();
+//      }
+//  }).listen(3000)
+
+

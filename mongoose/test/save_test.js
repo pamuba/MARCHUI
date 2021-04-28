@@ -3,9 +3,9 @@ const MarioChar = require('../models/marioChar')
 const assert = require('assert')
 
 //test suite
-describe("Saving Records", function(){
+xdescribe("Saving Records", function(){
 
-    it('Saves a new record to the database', function(done){
+    xit('Saves a new record to the database', function(done){
         var char = new MarioChar({
             name:'Marion'
         });

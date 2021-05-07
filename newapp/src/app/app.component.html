@@ -1,1 +1,26 @@
-<button mat-raised-b
+<button mat-raised-button>Hello World</button>
+<button mat-button>Hello World</button>
+<button mat-flat-button>Hello World</button>
+<button mat-stroked-button>Hello World</button>
+
+<button mat-icon-button>Icon</button>
+<button mat-fab>Fab</button>
+<button mat-mini-fab>Fab</button>
+
+
+<button mat-button>Basic</button>
+<button mat-button color="primary">Primary</button>
+<button mat-button color="accent">Accent</button>
+<button mat-button color="warn">Warn</button>
+<button mat-button disabled>Disabled</button>
+
+
+<mat-form-field appearance="fill">
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <br>
+  <app-first></app-first>
+  

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Step 1 - Including AngularJS -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+    <!-- Step 2 - Including the fusioncharts core library -->
+    <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+    <!-- Step 3 - Including the angularjs-fusioncharts directive-->
+    <script type="text/javascript"
+        src="angular-fusioncharts.js"></script>
+    <!-- Step 4 - Including the fusion theme -->
+    <script type="text/javascript"
+        src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+    <title>Document</title>
+</head>
+
+<body ng-app="myApp">
+    <script>
+        var myApp = angular.module('myApp', ['ng-fusioncharts']);
+        // Preparing the chart data
+        const chartData = [
+            {
+                label: "Venezuela",
+                value: "290"
+            },
+            {
+                label: "Saudi",
+                value: "260"
+            },
+            {
+                label: "Canada",
+                value: "180"
+            },
+            {
+                label: "Iran",
+                value: "140"
+            },
+            {
+                label: "Russia",
+                value: "115"
+            },
+            {
+                label: "UAE",
+                value: "100"
+            },
+            {
+                label: "US",
+                value: "30"
+            },
+            {
+                label: "China",
+                value: "30"
+            }
+        ];
+
+
+        // Chart Configurations
+        const dataSource = {
+            chart: {
+                caption: "Countries With Most Oil Reserves [2017-18]", //Set the chart caption
+                subCaption: "In MMbbl = One Million barrels", //Set the chart subcaption
+                xAxisName: "Country", //Set the x-axis name
+                yAxisName: "Reserves (MMbbl)", //Set the y-axis name
+                numberSuffix: "K",
+                theme: "fusion", //Set the theme for your chart
+            },
+            // Chart Data - from step 2
+            "data": chartData
+        }
+
+        myApp.controller('MyController', ['$scope', function ($scope) {
+            // datasource
+            $scope.myDataSource = dataSource
+        }]);
+    </script>
+
+    <div ng-controller="MyController">
+        <div fusioncharts id="my-chart-id" width="700" height="400" type="column2d" dataSource="{{myDataSource}}">
+        </div>
+    </div>
+</body>
+
+</html>

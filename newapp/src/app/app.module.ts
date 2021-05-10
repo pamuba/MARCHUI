@@ -8,7 +8,11 @@ import { MaterialModule } from './material.module';
 import { FirstComponent } from './first/first.component';
 import { PropertyBindingComponent } from './property-binding/property-binding.component';
 import { ClassBindingComponent } from './class-binding/class-binding.component';
-import { SyleBindingComponent } from './syle-binding/syle-binding.component'
+import { SyleBindingComponent } from './syle-binding/syle-binding.component';
+import { TwoWayComponent } from './two-way/two-way.component'
+import { FormsModule } from '@angular/forms';
+import { StructuralComponent } from './structural/structural.component';
+
 
 @NgModule({
   declarations: [
@@ -16,13 +20,16 @@ import { SyleBindingComponent } from './syle-binding/syle-binding.component'
     FirstComponent,
     PropertyBindingComponent,
     ClassBindingComponent,
-    SyleBindingComponent
+    SyleBindingComponent,
+    TwoWayComponent,
+    StructuralComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

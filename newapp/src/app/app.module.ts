@@ -12,7 +12,17 @@ import { SyleBindingComponent } from './syle-binding/syle-binding.component';
 import { TwoWayComponent } from './two-way/two-way.component'
 import { FormsModule } from '@angular/forms';
 import { StructuralComponent } from './structural/structural.component';
-
+import { PipesComponent } from './pipes.component';
+import { ChildComponent } from './child/child.component';
+import { NameChildComponent } from './name-child.component';
+import { NameParentComponent } from './name-parent.component';
+import { HeroParentComponent } from './hero-parent.component';
+import { HeroChildComponent } from './hero-child.component';
+import { VersionChildComponent } from './version-child.component';
+import { VersionParentComponent } from './version-parent.component';
+import { EmployeeListComponent } from './employee-list/employee-list.component';
+import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,14 +32,25 @@ import { StructuralComponent } from './structural/structural.component';
     ClassBindingComponent,
     SyleBindingComponent,
     TwoWayComponent,
-    StructuralComponent
+    StructuralComponent,
+    PipesComponent,
+    ChildComponent,
+    NameChildComponent,
+    NameParentComponent,
+    HeroParentComponent,
+    HeroChildComponent,
+    VersionChildComponent,
+    VersionParentComponent,
+    EmployeeListComponent,
+    EmployeeDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

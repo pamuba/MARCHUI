@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'appchanges';
+  public num = 9999;
+  public num1 = 9999;
+
+  public fn(){
+    this.num++;
+  }
+
+  public fn1(){
+    this.num1++;
+  }
 }

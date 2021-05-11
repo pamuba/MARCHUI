@@ -36,3 +36,4 @@ export class DepartmentDetailComponent implements OnInit {
   }
 
 }
+//can you upload today's video before tomorrow?

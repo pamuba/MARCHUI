@@ -16,6 +16,30 @@ mongoose.connect(db,{useNewUrlParser: true, useUnifiedTopology: true}, err=>{
     }
 })
 
+function verifyToken(req, res, next){
+    if(!req.headers.authorization){
+        return res.status(401).send('Unauthorized request')
+    }
+
+    let token = req.headers.authorization.split(' ')[1];
+    if(token ==='null'){
+        return res.status(401).send('Unauthorized request')
+    }
+    let payload;
+    try{
+       payload = jwt.verify(token, 'secretKey')
+    }
+    catch(err){
+        return res.status(401).send('Unauthorized request')
+    }
+    if(!payload)
+    {
+        return res.status(401).send('Unauthorized request')
+    }
+    req.userId = payload.subject
+    next()
+}
+
 //localhost:3000/api === /
 router.get('/', (req, res)=>{
     res.send("From API route")
@@ -32,7 +56,7 @@ router.post('/register', (req, res)=>{
         }
         else{
             let payload = { sublect:registeredUser._id }
-            let token = jwt.sign(payload, 'sceretKey')
+            let token = jwt.sign(payload, 'secretKey')
             res.status(200).send({token})
         }
     })
@@ -54,7 +78,7 @@ router.post('/login', (req, res)=>{
                     res.status(401).send('Invalid password')
                 }else{
                     let payload = { sublect:user._id }
-                    let token = jwt.sign(payload, 'sceretKey')
+                    let token = jwt.sign(payload, 'secretKey')
                     res.status(200).send({token})
 
                     // res.status(200).send(user)
@@ -123,7 +147,7 @@ router.get('/events', (req, res)=>{
     res.json(events);
 });
 
-router.get('/special', (req, res)=>{
+router.get('/special', verifyToken, (req, res)=>{
     let events = [
         {
             "_id":"1",

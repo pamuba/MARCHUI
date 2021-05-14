@@ -19,6 +19,10 @@
     "@angular/platform-browser": "~9.1.13",
     "@angular/platform-browser-dynamic": "~9.1.13",
     "@angular/router": "~9.1.13",
+    "bootstrap": "^5.0.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.9",
+    "nodemon": "^2.0.7",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

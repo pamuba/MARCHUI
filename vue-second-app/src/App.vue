@@ -1,15 +1,15 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <Greet name="Bruce"/>
+  <Greet name="Clark"/>
+  <Greet name="Diana"/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Greet from './components/Greet'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Greet,
   }
 }
 </script>
@@ -19,7 +19,7 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center; */
   color: #2c3e50;
   margin-top: 60px;
 }

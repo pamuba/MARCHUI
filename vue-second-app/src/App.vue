@@ -8,6 +8,7 @@
 
  <button @click="showPopup=true">Show</button>
  <Popup v-show="showPopup" @close="closePopup"/>
+ <PostList />
 
 </template>
 
@@ -15,6 +16,7 @@
 // import Greet from './components/Greet'
 // import Article from './components/Aticle'
 import Popup from './components/Popup'
+import PostList from './components/PostList'
 
 export default {
   name: 'App',
@@ -22,6 +24,7 @@ export default {
     // Greet,
     // Article,
     Popup,
+    PostList,
   },
   methods:{
     closePopup(msg){

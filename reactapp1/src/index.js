@@ -7,8 +7,8 @@ import IndecisionApp from './components/IndecisionApp'
 
 ReactDOM.render(
   <React.StrictMode>
-  {/* <App /> */}
-    <IndecisionApp />
+     <App />
+    {/* <IndecisionApp /> */}
   </React.StrictMode>,
   document.getElementById('root')
 );

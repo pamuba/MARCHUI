@@ -5,9 +5,6 @@ import Whale from './Whale/Whale';
 import { Route, Link, BrowserRouter, Switch } from 'react-router-dom'
 
 function App() {
-  const { search } = useLocation();
-  const match = search.match(/type=(.*)/)
-  const type = match?.[1]
   return (
     <div className="container">
       <h1>Marine Mamals</h1>
@@ -17,4 +14,36 @@ function App() {
           <ul>
             <li><Link to="/manatee">Manatee</Link></li>
             <li><Link to="/narwhal">Narwhal</Link></li>
-            <li><Link to="/whale">Whale</Link></l
+            <li><Link to="/whale">Whale</Link></li>
+            {/* <li><Link to="/whale?type=beluga">Beluga Whale</Link></li>
+            <li><Link to="/whale?type=blue">Blue Whale</Link></li> */}
+             <li><Link to="/whale/beluga">Beluga Whale</Link></li>
+            <li><Link to="/whale/blue">Blue Whale</Link></li>
+          </ul>
+        </nav>
+
+      
+       <Switch>
+        <Route path="/manatee">
+            <Manatee />
+        </Route>
+        <Route path="/narwhal">
+            <Narwhal />
+        </Route>
+
+        <Route path="/whale/:type">
+            <Whale />
+        </Route>
+        
+        <Route path="/whale">
+            <Whale />
+        </Route>
+        
+       </Switch>
+      </BrowserRouter>
+
+    </div>
+  );
+}
+
+export default App;

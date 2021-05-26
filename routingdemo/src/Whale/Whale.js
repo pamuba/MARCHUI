@@ -1,12 +1,21 @@
 import React from 'react'
-import { useLocation }
+import { useLocation, useParams } from 'react-router-dom'
+import Beluga from './Beluga'
+import Blue from './Blue'
 
 function Whale() {
+    // const { search } = useLocation();
+    // const match = search.match(/type=(.*)/)
+    // const type = match?.[1]
+
+    const { type } = useParams()
     return (
-        <div>
+        <>
             <h2>Whale</h2>
-        </div>
+            {type === 'beluga' && <Beluga />}
+            {type === 'blue' && <Blue />}
+        </>
     )
 }
 
-ex
+export default Whale
